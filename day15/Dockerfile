@@ -1,5 +1,6 @@
-FROM alpine:latest
+FROM python:alpine
 COPY . /solution
+RUN pip --no-cache-dir install -r /solution/requirements.txt
 WORKDIR /solution
 
-CMD ./solution.sh
+CMD ["python", "solution.py"]
